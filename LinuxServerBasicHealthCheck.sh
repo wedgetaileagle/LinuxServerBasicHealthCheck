@@ -29,6 +29,8 @@ iostat -c 1 10; echo
 echo -e "\n\n#### File Systems Checks\n"
 df -h; echo
 mount; echo
+# Check - FS RO mounted
+mount|egrep -iw "ext4|ext3|xfs|gfs|gfs2|btrfs"|sort -u -t' ' -k1,2
 lsblk; echo
 vgdisplay -v; echo
 
