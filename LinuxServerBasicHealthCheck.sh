@@ -13,8 +13,10 @@ uptime; echo
 free -m; echo
 top -b -n 1 | head -n 20; echo
 pstree; echo
-#Check - Process consuming most Virtual Memory
+# Check - Process consuming most Virtual Memory
 ps -eo 'vsz pid ruser cpu time args' | sort -nr | head -25; echo
+# Check - Process consuming most CPU resources
+ps -eo pcpu,pmem,pid,ppid,user,stat,args | sort -k 1 -r | head -6|sed 's/$/\n/'
 # Check - Zombie process
 ps -eo stat,pid,user,cmd|grep -w Z|awk '{print $2}'; echo
 mpstat 1 10; echo
