@@ -1,18 +1,30 @@
 # LinuxServerBasicHealthCheck
 RHEL Linux server basic health check
 
+-------------------------------------------------------------------
+
 #!/bin/bash
+#####
+# Version = 1.00a ;), so still developing
+#####
+
 date
 uname -n
 cat /etc/redhat-release
 
 #### Memory, CPU and Processes
-echo -e "\n\n#### RAM, CPU and Processes\n"
+echo -e "\n\n#### Memory, CPU and Processes\n"
 uptime; echo
 free -m; echo
 top -b -n 1 | head -n 20; echo
 pstree; echo
-ps -e -o 'vsz pid ruser cpu time args' | sort -nr | head -25
+#Check - Process consuming most Virtual Memory
+ps -eo 'vsz pid ruser cpu time args' | sort -nr | head -25; echo
+# Check - Zombie process
+ps -eo stat,pid,user,cmd|grep -w Z|awk '{print $2}'; echo
+mpstat 1 10; echo
+vmstat 1 10; echo
+iostat -c 1 10; echo
 
 #### Disks and File Systems Checks
 echo -e "\n\n#### File Systems Checks\n"
@@ -32,5 +44,6 @@ dig $(uname -n); echo
 echo -e "\n\n#### Log Files Checks\n"
 ls -lth /var/log/messages*
 if ! grep -i error /var/log/messages; then
-    echo -e "\n**** NO ERRORS FOUND IN /var/log/messages"
+    echo -e "\n**** NO ERRORS FOUND IN /var/log/messages"
 fi
+
