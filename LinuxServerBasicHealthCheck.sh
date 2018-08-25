@@ -13,6 +13,8 @@ uptime; echo
 free -m; echo
 top -b -n 1 | head -n 20; echo
 pstree; echo
+# Check - Process consuming most memory
+ps -eo pmem,pcpu,pid,ppid,user,stat,args | sort -k 1 -r | head -6|sed 's/$/\n/'
 # Check - Process consuming most Virtual Memory
 ps -eo 'vsz pid ruser cpu time args' | sort -nr | head -25; echo
 # Check - Process consuming most CPU resources
