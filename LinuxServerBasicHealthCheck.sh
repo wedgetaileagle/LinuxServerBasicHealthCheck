@@ -3,12 +3,13 @@ date
 uname -n
 cat /etc/redhat-release
 
-#### RAM, CPU and Processes
+#### Memory, CPU and Processes
 echo -e "\n\n#### RAM, CPU and Processes\n"
 uptime; echo
 free -m; echo
 top -b -n 1 | head -n 20; echo
 pstree; echo
+ps -e -o 'vsz pid ruser cpu time args' | sort -nr | head -25; echo
 
 #### Disks and File Systems Checks
 echo -e "\n\n#### File Systems Checks\n"
@@ -28,5 +29,5 @@ dig $(uname -n); echo
 echo -e "\n\n#### Log Files Checks\n"
 ls -lth /var/log/messages*
 if ! grep -i error /var/log/messages; then
-    echo -e "\n**** NO ERRORS FOUND IN /var/log/messages"
+Â Â Â  echo -e "\n**** NO ERRORS FOUND IN /var/log/messages"
 fi
