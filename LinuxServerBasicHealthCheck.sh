@@ -4,12 +4,15 @@ uname -n
 cat /etc/redhat-release
 
 #### Memory, CPU and Processes
-echo -e "\n\n#### RAM, CPU and Processes\n"
+echo -e "\n\n#### Memory, CPU and Processes\n"
 uptime; echo
 free -m; echo
 top -b -n 1 | head -n 20; echo
 pstree; echo
+#Check - Process consuming most Virtual Memory
 ps -e -o 'vsz pid ruser cpu time args' | sort -nr | head -25; echo
+# Check - Zombie process
+ps -eo stat,pid|grep -w Z|awk '{print $2}'; echo
 
 #### Disks and File Systems Checks
 echo -e "\n\n#### File Systems Checks\n"
