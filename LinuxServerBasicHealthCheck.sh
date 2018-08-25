@@ -14,6 +14,7 @@ ps -eo 'vsz pid ruser cpu time args' | sort -nr | head -25; echo
 # Check - Zombie process
 ps -eo stat,pid,user,cmd|grep -w Z|awk '{print $2}'; echo
 mpstat 1 10; echo
+vmstat 1 5
 
 #### Disks and File Systems Checks
 echo -e "\n\n#### File Systems Checks\n"
