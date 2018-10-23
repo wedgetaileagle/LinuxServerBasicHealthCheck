@@ -5,7 +5,7 @@ RHEL Linux server basic health check
 
 #!/bin/bash
 #####
-# Version = 1.00a ;), so still developing
+# Version = 1.10 ;), so still developing
 #####
 
 date
