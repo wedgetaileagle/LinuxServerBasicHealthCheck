@@ -40,6 +40,7 @@ ip addr; echo
 ip route; echo
 ntpq -pn; echo
 dig $(uname -n); echo
+netstat -aln | grep 'LISTEN '; echo
 
 #### Log Files Checks
 echo -e "\n\n#### Log Files Checks\n"
