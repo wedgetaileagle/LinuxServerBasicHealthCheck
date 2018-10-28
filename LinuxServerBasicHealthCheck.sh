@@ -2,10 +2,11 @@
 #####
 # Date: 29/10/2018
 # Version: 1.02a ;), so still developing
-# Function: Produce a Linux Server Check Report report
+# Function: Produce a Redhat Linux Server Check Report report
 # - Execute using the root uid
 # - Can be run from a collector using ssh-keys to authenticate
 # -- or can be executed using the Linux crond scheduler service.
+# - 97% of code will run on any Linux distribution.
 #####
 
 date
@@ -56,3 +57,7 @@ ls -lth /var/log/messages*
 if ! grep -i error /var/log/messages; then
     echo -e "\n**** NO ERRORS FOUND IN /var/log/messages"
 fi
+
+#### Use open source server profiling tools
+# - No point re-inventing the wheel
+# Add code to execute RHEL sosreport and cfg2html
