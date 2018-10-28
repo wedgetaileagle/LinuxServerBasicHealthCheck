@@ -5,7 +5,7 @@ RHEL Linux server basic health check
 
 #!/bin/bash
 #####
-## Version = 1.10 ;), so still developing
+### Version = 1.10 ;), so still developing
 #####
 
 date
@@ -20,7 +20,7 @@ top -b -n 1 | head -n 20; echo
 pstree; echo
 #Check - Process consuming most Virtual Memory
 ps -eo 'vsz pid ruser cpu time args' | sort -nr | head -25; echo
-## Check - Zombie process
+### Check - Zombie process
 ps -eo stat,pid,user,cmd|grep -w Z|awk '{print $2}'; echo
 mpstat 1 10; echo
 vmstat 1 10; echo
