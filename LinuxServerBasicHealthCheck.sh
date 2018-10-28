@@ -1,6 +1,11 @@
 #!/bin/bash
 #####
-# Version = 1.00a ;), so still developing
+# Date: 29/10/2018
+# Version: 1.02a ;), so still developing
+# Function: Produce a Linux Server Check Report report
+# - Execute using the root uid
+# - Can be run from a collector using ssh-keys to authenticate
+# -- or can be executed using the Linux crond scheduler service.
 #####
 
 date
@@ -21,8 +26,11 @@ ps -eo 'vsz pid ruser cpu time args' | sort -nr | head -25; echo
 ps -eo pcpu,pmem,pid,ppid,user,stat,args | sort -k 1 -r | head -6|sed 's/$/\n/'
 # Check - Zombie process
 ps -eo stat,pid,user,cmd|grep -w Z|awk '{print $2}'; echo
+# Display CPU Stats using mpstat
 mpstat 1 10; echo
+# Display CPU Stats using vmstat
 vmstat 1 10; echo
+# Display 2ndry Storage IO Stats using io stats
 iostat -c 1 10; echo
 
 #### Disks and File Systems Checks
