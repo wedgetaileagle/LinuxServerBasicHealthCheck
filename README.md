@@ -1,5 +1,8 @@
 # LinuxServerBasicHealthCheck
-RHEL Linux server basic health check
+- RHEL Linux server basic health check
+- Run using Server Autoamation system such as Ansible
+- Run before \ after a change
+
 
 -------------------------------------------------------------------
 
