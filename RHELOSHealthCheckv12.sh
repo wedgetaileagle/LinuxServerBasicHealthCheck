@@ -35,8 +35,11 @@ echo -e "\n## df -h command output"
 df -h; echo
 echo -e "\n## mount command output"
 mount; echo
+echo -e "\n## fstab file"
+cat /etc/fstab; echo
 echo -e "\n## lsblk command output"
 lsblk; echo
+# LVM Audit
 echo -e "\n## vgdisplay command output"
 vgdisplay -v 2>&1; echo
 
@@ -50,11 +53,15 @@ ip addr; echo
 ip route; echo
 # NTP Check
 ntpq -pn; echo
+# Add traceroute \ mtr to NTP time sources
 # DNS Check
 dig $(uname -n); echo
+# traceroute to DNS Resolvers
 # Add dig -x DNSREOVLER1
 # Add mtr command to DNS and NTP servers
 # Add Network stats checks, use netstat, ss
+ss -lnp
+# Add ping of default router
 
 #### Log Files Checks
 echo -e "\n\n#### Log Files Checks\n"
@@ -68,3 +75,4 @@ fi
 # Add Server Automation Check ( HPSA, Ansuble )
 # Add Monitoring System Check ( HPOV, Nagios \ Incinga )
 # Add Backup System Check
+# Add Active Directory Audit ( SSSD, Kerberos )
