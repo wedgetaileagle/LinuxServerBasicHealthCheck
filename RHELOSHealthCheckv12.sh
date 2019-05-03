@@ -64,4 +64,7 @@ if ! grep -i error /var/log/messages; then
 fi
 
 # Add run logwatch if installed
-# Add run sosreport health checks if inistalled.
+# Add run sosreport health checks if inistalled
+# Add Server Automation Check ( HPSA, Ansuble )
+# Add Monitoring System Check ( HPOV, Nagios \ Incinga )
+# Add Backup System Check
