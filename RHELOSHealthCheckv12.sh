@@ -72,7 +72,7 @@ fi
 
 # Add run logwatch if installed
 # Add run sosreport health checks if inistalled
-# Add Server Automation Check ( HPSA, Ansuble )
+# Add Server Automation Check ( HPSA, Ansible )
 # Add Monitoring System Check ( HPOV, Nagios \ Incinga )
 # Add Backup System Check
 # Add Active Directory Audit ( SSSD, Kerberos )
