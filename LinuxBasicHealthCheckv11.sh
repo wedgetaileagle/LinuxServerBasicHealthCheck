@@ -9,7 +9,7 @@
 # - 97% of code will run on any Linux distribution.
 #####
 
-LGWFN="$(uname -n)_$(date +%Y%M%d%H%m)_Logwatch.out"
+LGWFN="$(uname -n)_$(date +%Y%m%d%H%M)_Logwatch.out"
 
 date
 uname -n
