@@ -1,6 +1,6 @@
 #!/bin/bash	
 #####
-# Date: 7/5/2019
+# Date: 23/9/2019
 # Script Name: LinuxBasicHealthCheck.sh
 # Version: 1.1
 # Function: Produce a Redhat Linux Server Check Report report
