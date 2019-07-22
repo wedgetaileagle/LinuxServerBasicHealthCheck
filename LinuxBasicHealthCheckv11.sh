@@ -17,6 +17,11 @@ cat /etc/redhat-release
 echo -e "\n\n#### Memory, CPU and Processes\n"
 uptime; echo
 free -m; echo
+vmstat -S m 1 5; echo
+# Check - %CPU Utilisation Top 10 Processes
+ps -eo %cpu,pid,size,user,cmd | sort -r | head
+# Check - %Memory Utilisation Top 10 Processes
+ps -eo %mem,pid,size,user,cmd | sort -r | head
 #### Disks and File Systems Checks
 echo -e "\n\n#### File Systems Checks\n"
 df -h; echo
