@@ -1,6 +1,6 @@
 #!/bin/bash
 #### RHEL 9 Server Only Basic Health Check
-### Version 202501181100
+### Version 202501181125
 
 # Function to display server details
 server_details() {
@@ -114,4 +114,4 @@ main() {
 }
 
 # Execute the main function
-main()
+main
